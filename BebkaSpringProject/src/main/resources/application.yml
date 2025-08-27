@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: BebkaSpringProject
+  profiles:
+    active: dev
+
+server:
+  port: 8080
