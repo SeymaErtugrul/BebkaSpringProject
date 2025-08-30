@@ -1,10 +1,11 @@
 package com.example.BebkaSpringProject.repository;
 
-import com.example.BebkaSpringProject.model.Student;
+import com.example.BebkaSpringProject.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {
+@Repository("bookRepo")
+public interface BookRepository extends JpaRepository<Book,Long> {
 
 }
+
