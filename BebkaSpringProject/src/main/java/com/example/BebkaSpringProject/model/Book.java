@@ -1,15 +1,15 @@
 package com.example.BebkaSpringProject.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.lang.reflect.Type;
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -17,11 +17,18 @@ import java.lang.reflect.Type;
 @Getter
 @Setter
 public class Book {
+
     @Id
     @GeneratedValue
     long id;
 
     String author;
     String title;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    @JsonBackReference
+    private Student student;
+
 
 }
