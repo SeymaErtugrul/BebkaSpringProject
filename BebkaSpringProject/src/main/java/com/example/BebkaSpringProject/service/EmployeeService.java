@@ -47,4 +47,13 @@ public void deleteEmployee(Long employeeId)
     public List<Employee> findByDepartment(String department) {
         return employeeIRepository.findByDepartment(department);
     }
+
+
+    public List<Employee> getEmployeesWithSalaryGreaterThan(float amount){
+        return employeeIRepository.getEmployeesWithSalaryGreaterThan(amount);
+    }
+
+    public List<Employee> getEmployeesByDepartmentNative(String dept){
+        return employeeIRepository.getEmployeesByDepartmentNative(dept);
+    }
 }

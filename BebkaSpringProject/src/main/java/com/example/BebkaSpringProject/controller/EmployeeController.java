@@ -51,4 +51,14 @@ public class EmployeeController {
     public List<Employee> getByDepartment(@RequestParam String department) {
         return employeeService.findByDepartment(department);
     }
+
+    @GetMapping("/getGreaterSalary")
+    public ResponseEntity<List<Employee>> getBySalary(@RequestParam float amount){
+        return ResponseEntity.ok(employeeService.getEmployeesWithSalaryGreaterThan(amount));
+    }
+
+    @GetMapping("/getNativeDepartment")
+    public ResponseEntity<List<Employee>> getByDepartmentNative(@RequestParam String dept){
+        return ResponseEntity.ok(employeeService.getEmployeesByDepartmentNative(dept));
+    }
 }
