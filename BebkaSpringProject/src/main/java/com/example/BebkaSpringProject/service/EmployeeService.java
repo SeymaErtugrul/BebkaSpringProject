@@ -39,4 +39,12 @@ public void deleteEmployee(Long employeeId)
    Employee employee= employeeIRepository.findById(employeeId) .orElseThrow(() -> new RuntimeException("Böyle bir çalışan yok"));
     employeeIRepository.delete(employee);
 }
+
+    public List<Employee> findByName(String name) {
+        return employeeIRepository.findByNameContaining(name);
+    }
+
+    public List<Employee> findByDepartment(String department) {
+        return employeeIRepository.findByDepartment(department);
+    }
 }

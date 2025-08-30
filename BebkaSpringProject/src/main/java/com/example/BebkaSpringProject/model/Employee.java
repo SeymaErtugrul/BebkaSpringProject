@@ -18,5 +18,5 @@ public class Employee {
 
     String name;
     String email;
-
+    String department;
 }

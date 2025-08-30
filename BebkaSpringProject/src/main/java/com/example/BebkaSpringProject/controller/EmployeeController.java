@@ -42,5 +42,13 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
     }
 
+    @GetMapping("/getByName")
+    public List<Employee> getByName(@RequestParam String name) {
+        return employeeService.findByName(name);
+    }
 
+    @GetMapping("/getByDepartment")
+    public List<Employee> getByDepartment(@RequestParam String department) {
+        return employeeService.findByDepartment(department);
+    }
 }
