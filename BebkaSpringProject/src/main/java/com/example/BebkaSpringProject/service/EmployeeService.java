@@ -28,7 +28,7 @@ public class EmployeeService {
     }
 public Employee updateEmployee(long employeeid,String employeeName,String employeeMail)
 {
- Employee employee= employeeIRepository.findById(employeeid) .orElseThrow(() -> new RuntimeException(" Böyle bir çalışan yok"));
+     Employee employee= employeeIRepository.findById(employeeid) .orElseThrow(() -> new RuntimeException(" Böyle bir çalışan yok"));
      employee.setName(employeeName);
      employee.setEmail(employeeMail);
      return employeeIRepository.save(employee);
